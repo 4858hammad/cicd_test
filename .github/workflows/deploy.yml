@@ -1,0 +1,12 @@
+name: Deploy Code
+on: [push,workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Test step"
+        run: |
+          echo "Clone Repo"
+          echo "${{toJson(github)}}"
+#          git clone https://github.com/4858hammad/cicd_test.git
+          git clone https://github.com/${{github.repository}}.git
