@@ -7,6 +7,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Allows pushing to the repo
+      actions: read    # Allows running actions
     steps:
       - name: "Checkout Repository"
         uses: actions/checkout@v4
